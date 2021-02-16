@@ -1,0 +1,7 @@
+GET http://{{host}}:{{port}}/
+
+###
+
+GET http://{{host}}:{{port}}/Ayaan
+
+###
