@@ -1,0 +1,62 @@
+= First Kotlin + Springboot Application
+:author: Manu Kharbanda
+:email: author@email.com
+:source-highlighter: rouge
+:rouge-style: monokai
+
+
+
+== Intro
+
+This is my first foray into learning https://kotlinlang.org[Kotlin]. There are lots of buzz around Android development and Multiplatform Kotlin and Desktop Applications with Kotlin.
+
+With my history working with SpringBoot, I thought of using Kotlin as the language for server side code combined Springboot. The goal I have in mind is to progress my learning to be proficient in the language and investigate things like Jetpack Compose or Kotlin DSL.
+
+== Spring Boot Hello World
+
+NOTE: Running on port 8007 as 8080 is running on my local setup.
+
+
+== Source for Hello World
+
+[source%linenums,kotlin]
+----
+@GetMapping()
+fun hello(): ResponseEntity<String> {
+    return ResponseEntity.ok("Hello World")
+}
+----
+
+=== Test
+
+.http file
+[source%linenums,http]
+----
+GET http://{{host}}:{{port}}/
+
+###
+
+GET http://{{host}}:{{port}}/Ayaan
+
+###
+----
+
+.curl
+[source%linenums,curl]
+----
+curl -X GET --location "http://localhost:8007"
+
+curl -X GET --location "http://localhost:8007/Ayaan"
+----
+
+== Path Variables
+
+Using @PathVariable to echo name
+
+[source%linenums,kotlin]
+----
+@GetMapping(path = ["/{name}"])
+fun helloWorldParam(@PathVariable name: String) : ResponseEntity<String> {
+    //...
+}
+----
