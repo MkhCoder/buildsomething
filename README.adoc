@@ -3,12 +3,14 @@
 :email: author@email.com
 :source-highlighter: rouge
 :rouge-style: monokai
-
+:bro: as my brother says, Sim Simma
 
 
 == Intro
 
 This is my first foray into learning https://kotlinlang.org[Kotlin]. There are lots of buzz around Android development and Multiplatform Kotlin and Desktop Applications with Kotlin.
+
+So why buildsomething? I have procrastinated learning Kotlin. I finally told myself just build something, hence the name. It gives me the starting point to get over the mental block.
 
 With my history working with SpringBoot, I thought of using Kotlin as the language for server side code combined Springboot. The goal I have in mind is to progress my learning to be proficient in the language and investigate things like Jetpack Compose or Kotlin DSL.
 
