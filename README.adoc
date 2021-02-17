@@ -34,11 +34,11 @@ fun hello(): ResponseEntity<String> {
 .http file
 [source%linenums,http]
 ----
-GET http://{{host}}:{{port}}/
+GET http://{{host}}:{{port}}/bootlin/
 
 ###
 
-GET http://{{host}}:{{port}}/Ayaan
+GET http://{{host}}:{{port}}/bootlin/Ayaan
 
 ###
 ----
@@ -46,9 +46,9 @@ GET http://{{host}}:{{port}}/Ayaan
 .curl
 [source%linenums,curl]
 ----
-curl -X GET --location "http://localhost:8007"
+curl -X GET --location "http://localhost:8007/bootlin"
 
-curl -X GET --location "http://localhost:8007/Ayaan"
+curl -X GET --location "http://localhost:8007/bootlin/Ayaan"
 ----
 
 == Path Variables
@@ -58,9 +58,39 @@ Using @PathVariable to echo name
 [source%linenums,kotlin]
 ----
 @GetMapping(path = ["/{name}"])
-fun helloWorldParam(@PathVariable name: String) : ResponseEntity<String> {
+fun helloWorldParam(@PathVariable name: String) : ResponseEntity<String>
+{
     //...
 }
 ----
 
+== Enabling Some Features
 
+=== Actuator
+
+Add springboot starter
+
+[source%linenums,xml]
+----
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+----
+
+[big purple]#Actuator#
+http://127.0.0.1:8007/bootlin/actuator
+
+=== OpenApi UI with Swagger UI
+
+[source%linenums,xml]
+----
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>1.5.3</version>
+</dependency>
+----
+
+[big purple]#Swagger UI#
+http://127.0.0.1:8007/bootlin/swagger-ui/index.html?configUrl=/bootlin/v3/api-docs/swagger-config
