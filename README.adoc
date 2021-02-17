@@ -94,3 +94,5 @@ http://127.0.0.1:8007/bootlin/actuator
 
 [big purple]#Swagger UI#
 http://127.0.0.1:8007/bootlin/swagger-ui/index.html?configUrl=/bootlin/v3/api-docs/swagger-config
+
+== Working with Database
