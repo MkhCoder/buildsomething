@@ -5,3 +5,21 @@ GET http://{{host}}:{{port}}/
 GET http://{{host}}:{{port}}/Ayaan
 
 ###
+
+POST http://127.0.0.1:8007/bootlin/album/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "header",
+  "content": "header.png"
+}
+
+###
+
+GET http://127.0.0.1:8007/bootlin/album/1
+
+
+###
+
+GET http://127.0.0.1:8007/bootlin/album/pic/header.png
