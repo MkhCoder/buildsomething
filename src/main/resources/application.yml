@@ -2,7 +2,8 @@ server:
   port: 8007
   servlet:
     context-path: /bootlin
-
+jwt:
+  secret: ayaan
 management:
   endpoint:
     health:
