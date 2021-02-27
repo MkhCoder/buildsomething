@@ -1,0 +1,21 @@
+name: CICDBoot   // Any name of your choice
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  // Using latest ubuntu latest version
+
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: SB Beanstalk Deploy
+      uses: buildsomething/beanstalk-deploy@v4
+      with:
+        aws_access_key: AKIAQHINB54QJ7NPZ6EV
+        aws_secret_key: 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
+        region: 
+        application_name: 
+        environment_name: dev
+        version_label: 
+        deployment_package: boot.zip
